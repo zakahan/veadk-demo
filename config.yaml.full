@@ -1,0 +1,144 @@
+model:
+  # [required] for running agent
+  agent:
+    provider: openai
+    name: doubao-seed-1-6-250615
+    api_base: https://ark.cn-beijing.volces.com/api/v3/
+    api_key: 
+    encrypted: true # true | false
+    caching: enabled # enabled | disabled
+    max_llm_calls: 100
+  # [optional] for llm-as-a-judge a evaluation
+  judge:  
+    name: doubao-seed-1-6-250615
+    api_base: https://ark.cn-beijing.volces.com/api/v3/
+    api_key: 
+  # [optional] for knowledgebase
+  embedding:
+    name: doubao-embedding-text-240715
+    dim: 2560
+    api_base: https://ark.cn-beijing.volces.com/api/v3/embeddings
+    api_key:
+  video:
+    name: doubao-seedance-1-0-pro-250528
+    api_base: https://ark.cn-beijing.volces.com/api/v3/
+    api_key: 
+  image:
+    name: doubao-seedream-3-0-t2i-250415
+    api_base: https://ark.cn-beijing.volces.com/api/v3/
+    api_key: 
+  edit:
+    name: doubao-seededit-3-0-i2i-250628
+    api_base: https://ark.cn-beijing.volces.com/api/v3/
+    api_key: 
+
+volcengine:
+  # [optional] for Viking DB and `web_search` tool
+  access_key:
+  secret_key:
+
+tool:
+  # [optional] https://console.volcengine.com/ask-echo/my-agent
+  vesearch: 
+    endpoint:   # `bot_id`
+    api_key: 
+  # [optional] 
+  web_scraper: 
+    endpoint: 
+    api_key:    # `token`
+  # [optional] https://open.larkoffice.com/app
+  lark: 
+    endpoint:   # `app_id`
+    api_key:    # `app_secret`
+    token:      # `user_token`
+  # [optional] for Volcengine Lake AI Service https://www.volcengine.com/product/las
+  las:
+    url: #mcp sse url
+    dataset_id:  #dataset name
+  mcp_router:
+    url: #mcp sse/streamable-http url
+  code_sandbox:
+    url: #mcp sse/streamable-http url
+    api_key: #mcp api key
+  browser_sandbox:
+    url: #mcp sse/streamable-http url
+    api_key: #mcp api key
+  computer_sandbox:
+    url: #mcp sse/streamable-http url
+    api_key: #mcp api key
+
+
+observability:
+  # [optional] for exporting tracing data to Volcengine CozeLoop and APMPlus platform
+  opentelemetry:
+    apmplus:
+      endpoint: http://apmplus-cn-beijing.volces.com:4317
+      api_key: 
+      service_name: 
+    cozeloop:
+      endpoint: https://api.coze.cn/v1/loop/opentelemetry/v1/traces
+      api_key: 
+      service_name: # Coze loop `space_id`
+    tls:
+      endpoint: https://tls-cn-beijing.volces.com:4318/v1/traces
+      service_name: # TLS `topic_id`
+      region: cn-beijing
+  # [optional] for exporting evaluation data to Volcengine VMP (https://console.volcengine.com/prometheus)
+  prometheus:
+    pushgateway_url: 
+    username: 
+    password: 
+
+
+database:
+  # [optional]
+  opensearch:
+    host:       # should without `http://` or `https://` 
+    port: 9200  # default OpenSearch port
+    username: 
+    password: 
+  # [optional]
+  mysql:
+    host: 
+    user: 
+    password: 
+    database: 
+    charset: utf8
+  # [optional]
+  redis:
+    host: 
+    port: 6379  # default Redis port
+    password: 
+    db: 0       # default 
+  # [optional] for knowledgebase (https://console.volcengine.com/vikingdb)
+  viking:
+    project: default    # user project in Volcengine Viking DB
+    region: cn-beijing
+  # [optional] for knowledgebase with viking database
+  tos:
+    endpoint: tos-cn-beijing.volces.com # default Volcengine TOS endpoint
+    region: cn-beijing                  # default Volcengine TOS region
+    bucket:
+
+
+# [optional] for prompt optimization in cli/app
+prompt_pilot:
+  api_key:
+
+
+logging:
+  # ERROR
+  # WARNING
+  # INFO
+  # DEBUG
+  level: DEBUG
+
+
+# =================
+# Project deploy
+# =================
+veadk:
+  tracer:
+    apmplus: true
+    cozeloop: true
+    tls: true

@@ -1,0 +1,16 @@
+[project]
+name = "veadk-demo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=2.12.0",
+    "litellm<=1.75",        # 高版本有日志报错
+    "mcp-server-calculator>=0.2.0",
+    "mcp-server-time>=2025.8.4",
+    "veadk-python",
+]
+
+[tool.uv.sources]
+veadk-python = { git = "https://github.com/volcengine/veadk-python.git" }
