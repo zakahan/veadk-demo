@@ -10,6 +10,13 @@ uv sync
 至少配置config.yaml.example里的项目
 
 3. 运行veadk web
+先准备一下数据
+```bash
+python demo/prepare_data.py 
+```
+
+这个要等三到五分钟，因为用的是viking memory，第一次运行会等一阵
+
 ```bash
 LONG_TERM_MEMORY_BACKEND=viking veadk web
 ```
