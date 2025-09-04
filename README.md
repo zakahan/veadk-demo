@@ -9,14 +9,12 @@ uv sync
 2. 配置config
 至少配置config.yaml.example里的项目
 
-3. 运行main
+3. 运行veadk web
 ```bash
-uv run main.py 
+LONG_TERM_MEMORY_BACKEND=viking veadk web
 ```
 
 
-一个非常简单的demo
-综合了知识库、长期记忆、Tracing、MCP工具调用和多轮对话能力
 
 - tracing结果
 ![image](images/img.png)

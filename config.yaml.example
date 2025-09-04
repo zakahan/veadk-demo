@@ -9,12 +9,24 @@ model:
     caching: enabled # enabled | disabled
     max_llm_calls: 100
 
+
+volcengine:
+  # [optional] for Viking DB and `web_search` tool
+  access_key:
+  secret_key:
+
 observability:
   opentelemetry:
     cozeloop:
       endpoint: https://api.coze.cn/v1/loop/opentelemetry/v1/traces
       api_key: 
       service_name: # Coze loop `space_id`
+
+database:
+  viking:
+    project: default    # user project in Volcengine Viking DB
+    region: cn-beijing
+  # [optional] for knowledgebase with viking database
 
 logging:
   # ERROR
