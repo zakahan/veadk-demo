@@ -11,7 +11,7 @@ from veadk import Agent, Runner
 from veadk.knowledgebase import KnowledgeBase
 from veadk.memory.long_term_memory import LongTermMemory
 from veadk.tracing.telemetry.exporters.cozeloop_exporter import CozeloopExporter
-from veadk.tracing.telemetry.exporters.apmplus_exporter import APMPlusExporter
+# from veadk.tracing.telemetry.exporters.apmplus_exporter import APMPlusExporter
 from veadk.tracing.telemetry.opentelemetry_tracer import OpentelemetryTracer
 
 from mock_data import mock_data
@@ -22,7 +22,7 @@ USER_ID = "user_id"
 
 
 
-exporters = [APMPlusExporter()]
+exporters = [CozeloopExporter()]
 tracer = OpentelemetryTracer(exporters=exporters)
 # ----------------------------------------------------------------------------------------
 # 我这里先用local为例子了，local的不具备持久化，可以反复操作

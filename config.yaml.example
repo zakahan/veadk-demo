@@ -1,0 +1,24 @@
+model:
+  # [required] for running agent
+  agent:
+    provider: openai
+    name: doubao-seed-1-6-250615
+    api_base: https://ark.cn-beijing.volces.com/api/v3/
+    api_key: 
+    encrypted: true # true | false
+    caching: enabled # enabled | disabled
+    max_llm_calls: 100
+
+observability:
+  opentelemetry:
+    cozeloop:
+      endpoint: https://api.coze.cn/v1/loop/opentelemetry/v1/traces
+      api_key: 
+      service_name: # Coze loop `space_id`
+
+logging:
+  # ERROR
+  # WARNING
+  # INFO
+  # DEBUG
+  level: DEBUG
